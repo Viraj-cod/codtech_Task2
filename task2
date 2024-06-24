@@ -1,0 +1,50 @@
+x = int(input("Enter the number of subject you have:"))
+a = []
+for i in range(x):
+    z = input(f"Enter the subject {i+1}:")
+    a.append(z)
+
+max = int(input("Enter the Maximum marks:"))
+O = max *0.8 
+A1 = max *0.7
+A = max*0.6
+B1 = max *0.55
+B = max*0.50
+C = max*0.45
+P = max*0.40
+
+k = []
+xx = []
+for j in a:
+    f = int(input(f"Enter the marks of {j} subject :"))
+    k.append(f)
+    if f >= O and f < max:
+        xx.append("O")
+    elif f >= A1 and f < O:
+        xx.append("A+")
+    elif f >= A and f < A1:
+        xx.append("A")
+    elif f >= B1 and f < A:
+        xx.append("B+")
+    elif f >= B and f < B1:
+        xx.append("B")
+    elif f >= C and f < B:
+        xx.append("C")
+    elif f >= P and f < C:
+        xx.append("P")
+    else:
+        xx.append("Fail")
+
+print("--------------MARKSCARD-------------------")
+for p in range(x):
+    print("Subject:",a[p],",Marks:",k[p],"Grade:",xx[p])
+    
+total = (sum(k)/(max*x))*100
+cg = total / 9.5
+print(f"\nThe Overall percentage is :{total}\n Cgpa is:{cg}")
+
+while(True):
+    c = input("Press any key to exit")
+    break
+
+
